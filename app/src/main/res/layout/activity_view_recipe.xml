@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".ViewRecipeActivity">
+    <include android:id="@+id/include" layout="@layout/toolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent" tools:layout_editor_absoluteX="53dp"/>
+    <ImageView android:id="@+id/addImage" android:layout_width="128dp" android:layout_height="128dp" android:layout_marginStart="16dp" android:layout_marginTop="25dp" android:layout_marginBottom="25dp" app:layout_constraintBottom_toTopOf="@+id/ViewIngredients" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/include" app:layout_constraintVertical_bias="0.0" tools:srcCompat="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/recipeNameEditText"
+        android:layout_width="164dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/addImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cuisineEditText"
+        android:layout_width="91dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="cuisine"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/recipeNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/recipeNameEditText" />
+
+    <TextView
+        android:id="@+id/categoryEditText"
+        android:layout_width="91dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="category"
+        app:layout_constraintStart_toStartOf="@+id/cuisineEditText"
+        app:layout_constraintTop_toBottomOf="@+id/cuisineEditText" />
+    <TextView android:id="@+id/stepsEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="150dp" android:ems="10" android:gravity="start|top" android:inputType="textMultiLine" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/ViewIngredients"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ViewIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <TextView
+        android:id="@+id/servingEditText"
+        android:layout_width="91dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="serving"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/categoryEditText"
+        app:layout_constraintTop_toBottomOf="@+id/categoryEditText" />
+    <TextView android:id="@+id/ratingEditText" android:layout_width="64dp" android:layout_height="65dp" android:layout_marginStart="24dp" android:layout_marginTop="24dp" android:ems="10" android:hint="5" android:inputType="numberDecimal" android:textAlignment="center" android:textSize="34sp" android:textStyle="bold" app:layout_constraintStart_toEndOf="@+id/cuisineEditText" app:layout_constraintTop_toBottomOf="@+id/recipeNameEditText"/>
+
+    <Button
+        android:id="@+id/addtoShoppingCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="add to cart "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deleteRecipeButton"
+        app:layout_constraintTop_toBottomOf="@+id/stepsEditText"
+        app:layout_constraintVertical_bias="1.0" />
+    <Button android:id="@+id/deleteRecipeButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="32dp" android:layout_marginEnd="55dp" android:layout_marginBottom="16dp" android:text="Delete recipy " app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/addtoShoppingCart" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/stepsEditText" app:layout_constraintVertical_bias="1.0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
